@@ -62,13 +62,14 @@ To delete the notification database (primarily for development purposes), use:
 
 ## Supported communication channels
 
-* Email (unencrypted)
+* Email (unencrypted, GMail only)
 * Telegram bot (unencrypted)
 
 ## Important TODOs
 
 * Add support for daily digest messages
 * Add negative notifications (e.g. "no new messages for app-x today, all is good")
+* Implement generic email accounts apart from GMail (need to figure out some spam filtering stuff)
 * Add new communication channels, such as PGP-encrypted emails, Slack channels, etc.
 * Refactor to minimize client footprint
 * Create packaged installer for server
