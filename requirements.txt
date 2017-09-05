@@ -1,0 +1,5 @@
+blake2
+requests
+pycrypto
+appdirs
+validate_email

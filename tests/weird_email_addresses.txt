@@ -1,0 +1,2 @@
+“email”@example.com
+email@[123.123.123.123]
