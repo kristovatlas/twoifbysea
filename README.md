@@ -7,6 +7,12 @@ twoifbysea is a server that receives messaging requests from clients. The goals 
 * Rapid development for clients, abstracting the annoying details of messaging away
 * Supporting a variety of messaging channels
 
+## Installation
+
+To install PyPI dependencies, run:
+
+    $ pip install -r /path/to/twoifbysea/requirements.txt
+
 ## Usage
 
 Clients must connect to the server using a supported connection mechanism; currently, only HTTP is supported. (Please create a [GitHub issue](https://github.com/kristovatlas/twoifbysea/issues) to request additional connectors.) Once started, the server can then service client requests to send notifications. The notification script must be scheduled as a cron job to clear the queue.
