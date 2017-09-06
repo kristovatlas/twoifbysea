@@ -13,6 +13,35 @@ To install PyPI dependencies, run:
 
     $ pip install -r /path/to/twoifbysea/requirements.txt
 
+### Troubleshooting pycrypto installation
+
+If you see an error message such as:
+
+```
+blake2/blake2module.c:1:20: fatal error: Python.h: No such file or directory
+
+ #include <Python.h>
+
+                    ^
+
+compilation terminated.
+
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+
+----------------------------------------
+Cleaning up...
+Command /usr/bin/python -c "import setuptools,
+tokenize;__file__='/tmp/pip-build-Br8maE/blake2/setup.py';exec(compile(getattr(tokenize,
+'open', open)(__file__).read().replace('\r\n', '\n'), __file__,
+'exec'))" install --record /tmp/pip-EL6ID6-record/install-record.txt
+--single-version-externally-managed --compile failed with error code 1
+in /tmp/pip-build-Br8maE/blake2
+```
+
+This may indicate that you are lacking important source code files for Python-based development. This can be rectified for some Linux distributions by running:
+
+    $ apt-get update && apt-get install python-dev
+
 ## Usage
 
 Clients must connect to the server using a supported connection mechanism; currently, only HTTP is supported. (Please create a [GitHub issue](https://github.com/kristovatlas/twoifbysea/issues) to request additional connectors.) Once started, the server can then service client requests to send notifications. The notification script must be scheduled as a cron job to clear the queue.
