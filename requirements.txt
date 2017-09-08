@@ -1,4 +1,5 @@
 blake2
+enum34
 requests
 pycrypto
 appdirs
