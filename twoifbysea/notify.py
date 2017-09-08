@@ -90,7 +90,13 @@ def process_email(db_con, notif_req):
 def process_gmail(db_con, notif_req):
     """Try to send notification via GMail"""
     if notif_req.when == common.SupportedTimes.ONCE_NEXT_BATCH:
-        sent = email_sender.GmailSender().send(notif_req)
+        try:
+            sent = email_sender.GmailSender().send(notif_req)
+
+        except email_sender.SMTPAuthenticationFailureError, err:
+            err_msg = "Error with SMTP Authenticaiton sending via GMail:{0}".format(
+                str(err))
+            common.log(msg=err_msg, level=logging.ERROR)
 
         if sent:
             status_msg = 'Email succesfully sent to {0}.'.format(
